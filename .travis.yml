@@ -1,3 +1,13 @@
 language: node_js
 node_js:
 - '0.10'
+deploy:
+  provider: npm
+  email: d2ltravisdeploy@d2l.com
+  api_key:
+    secure: kbd9PFMuS1XlXTrPaowlSPgLlLMq9B+WMVLhvi3cK+0TrpKwRv1UDqj+hz6EAXd0b/2zV452mJZ20lEf9Z2m5xdhWVLYxY0qJdKSFFNBB9qF5HlUbwOhu3A44k03YUMqYKXj4Z5P7I/i+qS5sSLdoJLpeP5xwsm68ZOOWDkDdUE=
+  on:
+    tags: true
+    repo: Brightspace/images-to-less-variables
+    all_branches: true
+
