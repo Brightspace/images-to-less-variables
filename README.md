@@ -42,7 +42,7 @@ var createImageVariables = require('images-to-less-variables');
 createImageVariables( '*.png', { prefix: 'my-ns-' } );
 ```
 
-**Note:** Currently, the images must be uniquely named.  The module currently does not handle duplicate file names spreadh across directories, but this could be added.
+**Note:** Currently, the images must be uniquely named.  The module currently does not handle duplicate file names spread across directories, but this could be added.
 
 
 [npm-url]: https://www.npmjs.org/package/images-to-less-variables
