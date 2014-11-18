@@ -1,6 +1,6 @@
 {
   "name": "images-to-less-variables",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple utility for generating Less variables for images.",
   "main": "lib/index.js",
   "scripts": {
