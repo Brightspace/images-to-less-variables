@@ -1,4 +1,14 @@
-images-to-less
-==============
+# images-to-less-variables
 
-A simple module for generating Less variables with base-64 encoding for specified images.
+A simple utility for generating Less variables for images.
+
+## Installation
+
+Install from NPM:
+```shell
+npm install images-to-less-variables
+```
+
+## Usage
+
+Coming soon!
