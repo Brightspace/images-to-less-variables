@@ -42,6 +42,14 @@ var createImageVariables = require('images-to-less-variables');
 createImageVariables( '*.png', { prefix: 'my-ns-' } );
 ```
 
+By default, images are compressed before base-64 encoding for the variables.  This can be explicitly set as well:
+
+```javascript
+var createImageVariables = require('images-to-less-variables');
+
+createImageVariables( '*.png', { optimize: false } );
+```
+
 **Note:** Currently, the images must be uniquely named.  The module currently does not handle duplicate file names spread across directories, but this could be added.
 
 
