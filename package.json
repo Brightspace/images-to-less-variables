@@ -1,6 +1,6 @@
 {
   "name": "images-to-less-variables",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple utility for generating Less variables for images.",
   "main": "lib/index.js",
   "scripts": {
@@ -22,8 +22,11 @@
   },
   "homepage": "https://github.com/Brightspace/images-to-less-variables",
   "dependencies": {
+    "chalk": "^0.5.1",
     "q": "^1.1.1",
     "fs": "0.0.2",
+    "imagemin": "^3.1.0",
+    "object-assign": "^2.0.0",
     "through2": "^0.6.3",
     "vinyl-fs": "^0.3.13"
   },
