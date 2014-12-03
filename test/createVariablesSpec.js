@@ -7,15 +7,17 @@ var dataPath = path.join( __dirname, 'data' );
 
 describe( 'createVariables', function() {
 
-	var imagesPath = path.join( dataPath, '*.png' );
+	var imagesPath = path.join( dataPath, 'icon.png' );
 
+	var expectedEmptyLength = 0;
+	var expectedEmptyValue = 'url("data:image/png;base64,")';
 	var expectedUncompressedLength = 477;
 	var expectedUncompressedValue = 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH3QwQDjsk/bI5LAAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2NyaXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2FybmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRUaXRsZQCo7tInAAAARVBMVEX///+0ODi0ODi0ODi0ODi1OzvERkbESEjESUneYWHfZGTgaGjhbGzhb2/ic3PjdnbkenrkfX3lgYHmhIXokZHomZnroKDN9k3IAAAABHRSTlMAEICf9IbTdAAAAEdJREFUGFfFz7kRgDAMAMH1UwD9N0kDSCLgGVwB2c1mN6F3kImJNraG2h+gEo0bqhLqhad/gNQXyMPsH4gIxgLENTOhAmLACWvtICC//BPwAAAAAElFTkSuQmCC")';
 	var expectedCompressedLength = 225;
 	var expectedCompressedValue = 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAARVBMVEX///+0ODi0ODi0ODi0ODi1OzvERkbESEjESUneYWHfZGTgaGjhbGzhb2/ic3PjdnbkenrkfX3lgYHmhIXokZHomZnroKDN9k3IAAAABHRSTlMAEICf9IbTdAAAAEdJREFUGFfFz7kRgDAMAMH1UwD9N0kDSCLgGVwB2c1mN6F3kImJNraG2h+gEo0bqhLqhad/gNQXyMPsH4gIxgLENTOhAmLACWvtICC//BPwAAAAAElFTkSuQmCC")';
 
 	beforeEach( function() {
-		spyOn( console, 'log' ).and.callFake( function() { } );
+		spyOn( console, 'log' ).and.callThrough();
 	} );
 
 	it( 'should create Less variable for uncompressed image', function( done ) {
@@ -37,6 +39,18 @@ describe( 'createVariables', function() {
 			expect( variables[0].name ).toBe( '@icon' );
 			expect( variables[0].length ).toBe( expectedCompressedLength );
 			expect( variables[0].value ).toBe( expectedCompressedValue );
+			done();
+		} );
+
+	} );
+
+	it( 'should create Less variable for empty image', function( done ) {
+
+		imagesToLess( path.join( dataPath, 'empty.png' ) ).then( function( variables ) {
+			expect( variables.length ).not.toBe( 0 );
+			expect( variables[0].name ).toBe( '@empty' );
+			expect( variables[0].length ).toBe( expectedEmptyLength );
+			expect( variables[0].value ).toBe( expectedEmptyValue );
 			done();
 		} );
 
