@@ -7,7 +7,7 @@ var coveralls = require('gulp-coveralls'),
 	jshint = require('gulp-jshint');
 
 gulp.task( 'lint', function() {
-	return gulp.src( ['gulpfile.js', 'lib/*.js', 'test/*.js'] )
+	return gulp.src( ['gulpfile.js', 'lib/*.js'] )
 		.pipe( jshint() )
 		.pipe( jshint.reporter('default') );
 } );
