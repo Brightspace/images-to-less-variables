@@ -3,7 +3,6 @@
 [![Build status][ci-image]][ci-url]
 [![Coverage Status][coverage-image]][coverage-url]
 [![Dependency Status][dependencies-image]][dependencies-url]
-[![Dev Dependency Status][dev-dependencies-image]][dev-dependencies-url]
 
 A simple utility for generating Less variables for images.
 
@@ -63,5 +62,3 @@ createImageVariables( '*.png', { optimize: false } );
 [coverage-url]: https://coveralls.io/r/Brightspace/images-to-less-variables?branch=master
 [dependencies-url]: https://david-dm.org/brightspace/images-to-less-variables
 [dependencies-image]: https://david-dm.org/brightspace/images-to-less-variables.png
-[dev-dependencies-url]: https://david-dm.org/brightspace/images-to-less-variables#info=devDependencies
-[dev-dependencies-image]: https://david-dm.org/brightspace/images-to-less-variables/dev-status.png
