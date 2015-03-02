@@ -53,12 +53,11 @@ createImageVariables( '*.png', { optimize: false } );
 
 **Note:** Currently, the images must be uniquely named.  The module currently does not handle duplicate file names spread across directories, but this could be added.
 
-
 [npm-url]: https://www.npmjs.org/package/images-to-less-variables
-[npm-image]: https://badge.fury.io/js/images-to-less-variables.png
-[ci-image]: https://travis-ci.org/Brightspace/images-to-less-variables.svg?branch=master
+[npm-image]: https://img.shields.io/npm/v/images-to-less-variables.svg
 [ci-url]: https://travis-ci.org/Brightspace/images-to-less-variables
-[coverage-image]: https://coveralls.io/repos/Brightspace/images-to-less-variables/badge.png?branch=master
+[ci-image]: https://travis-ci.org/Brightspace/images-to-less-variables.svg?branch=master
 [coverage-url]: https://coveralls.io/r/Brightspace/images-to-less-variables?branch=master
+[coverage-image]: https://img.shields.io/coveralls/Brightspace/images-to-less-variables.svg
 [dependencies-url]: https://david-dm.org/brightspace/images-to-less-variables
-[dependencies-image]: https://david-dm.org/brightspace/images-to-less-variables.png
+[dependencies-image]: https://img.shields.io/david/Brightspace/images-to-less-variables.svg
