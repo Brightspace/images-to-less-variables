@@ -2,8 +2,8 @@
 
 var chalk = require('chalk'),
 	argv = require('yargs')
-	.usage('Usage: imgToLess [--prefix|-p] [--output|-o output.less] [image.png]')
-	.example('imgtoless --prefix -vui --output images.less *.png')
+	.usage('Usage: imgToLess [--prefix|-p] [--output|-o output.scss] [image.png]')
+	.example('imgtoscss --prefix -vui --output images.scss *.png')
 	.alias('o', 'output')
 	.alias('p', 'prefix')
 	.argv;
@@ -14,7 +14,7 @@ if (argv._.length === 0) {
 }
 
 var imagesToVariables = require('../lib/create'),
-	formatter = require('../lib/formatters/less');
+	formatter = require('../lib/formatters/scss');
 
 imagesToVariables(
 	argv._,
