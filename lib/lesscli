@@ -1,0 +1,30 @@
+#! /usr/bin/env node
+
+var chalk = require('chalk'),
+	argv = require('yargs')
+	.usage('Usage: imgToLess [--prefix|-p] [--output|-o output.less] [image.png]')
+	.example('imgtoless --prefix -vui --output images.less *.png')
+	.alias('o', 'output')
+	.alias('p', 'prefix')
+	.argv;
+
+if (argv._.length === 0) {
+	console.error('At least one image file must be specified.');
+	process.exit(1);
+}
+
+var imagesToLess = require('./index');
+
+imagesToLess(
+	argv._,
+	{
+		dest: argv.output,
+		prefix: argv.prefix
+	}
+).catch(function(err) {
+	console.error(err);
+	process.exit(1);
+}).then(function() {
+	console.log(chalk.green('Less variables created successfully.'));
+	process.exit(0);
+});
