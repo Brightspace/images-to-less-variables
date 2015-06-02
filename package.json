@@ -1,8 +1,11 @@
 {
   "name": "images-to-less-variables",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple utility for generating Less variables for images.",
   "main": "lib/index.js",
+  "bin": {
+    "imgtoless": "bin/lesscli"
+  },
   "scripts": {
     "test": "gulp"
   },
@@ -28,7 +31,8 @@
     "object-assign": "^2.0.0",
     "q": "^1.2.0",
     "through2": "^0.6.3",
-    "vinyl-fs": "^1.0.0"
+    "vinyl-fs": "^1.0.0",
+    "yargs": "^3.10.0"
   },
   "devDependencies": {
     "gulp": "^3.8.9",
