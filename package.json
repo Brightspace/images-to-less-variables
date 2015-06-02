@@ -4,7 +4,7 @@
   "description": "A simple utility for generating Less variables for images.",
   "main": "lib/index.js",
   "bin": {
-    "imgtoless": "lib/lesscli"
+    "imgtoless": "bin/lesscli"
   },
   "scripts": {
     "test": "gulp"

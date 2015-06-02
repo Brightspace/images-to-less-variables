@@ -13,7 +13,7 @@ if (argv._.length === 0) {
 	process.exit(1);
 }
 
-var imagesToLess = require('./index');
+var imagesToLess = require('../lib/index');
 
 imagesToLess(
 	argv._,
