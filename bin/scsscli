@@ -27,6 +27,6 @@ imagesToVariables(
 	console.error(err);
 	process.exit(1);
 }).then(function() {
-	console.log(chalk.green('Less variables created successfully.'));
+	console.log(chalk.green('Scss variables created successfully.'));
 	process.exit(0);
 });
