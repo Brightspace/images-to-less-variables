@@ -1,10 +1,11 @@
 {
   "name": "images-to-variables",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple utility for generating Sass/Less variables for images.",
   "main": "lib/index.js",
   "bin": {
-    "imgtoless": "bin/lesscli"
+    "imgtoless": "bin/lesscli",
+    "imgtoscss": "bin/scsscli"
   },
   "scripts": {
     "test": "gulp"
@@ -16,6 +17,7 @@
   "keywords": [
     "d2l",
     "less",
+    "sass",
     "images"
   ],
   "author": "D2L Corporation",

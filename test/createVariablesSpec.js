@@ -1,6 +1,6 @@
 'use strict';
 
-var imagesToLess = require('../'),
+var imagesToLess = require('../lib/create'),
 	path = require('path');
 
 var dataPath = path.join( __dirname, 'data' );
@@ -24,7 +24,7 @@ describe( 'createVariables', function() {
 
 		imagesToLess( imagesPath, { optimize: false } ).then( function( variables ) {
 			expect( variables.length ).not.toBe( 0 );
-			expect( variables[0].name ).toBe( '@icon' );
+			expect( variables[0].name ).toBe( 'icon' );
 			expect( variables[0].length ).toBe( expectedUncompressedLength );
 			expect( variables[0].value ).toBe( expectedUncompressedValue );
 			done();
@@ -36,7 +36,7 @@ describe( 'createVariables', function() {
 
 		imagesToLess( imagesPath ).then( function( variables ) {
 			expect( variables.length ).not.toBe( 0 );
-			expect( variables[0].name ).toBe( '@icon' );
+			expect( variables[0].name ).toBe( 'icon' );
 			expect( variables[0].length ).toBe( expectedCompressedLength );
 			expect( variables[0].value ).toBe( expectedCompressedValue );
 			done();
@@ -48,7 +48,7 @@ describe( 'createVariables', function() {
 
 		imagesToLess( path.join( dataPath, 'empty.png' ) ).then( function( variables ) {
 			expect( variables.length ).not.toBe( 0 );
-			expect( variables[0].name ).toBe( '@empty' );
+			expect( variables[0].name ).toBe( 'empty' );
 			expect( variables[0].length ).toBe( expectedEmptyLength );
 			expect( variables[0].value ).toBe( expectedEmptyValue );
 			done();
@@ -60,7 +60,7 @@ describe( 'createVariables', function() {
 
 		imagesToLess( imagesPath, { prefix: 'abc-' } ).then( function( variables ) {
 			expect( variables.length ).not.toBe( 0 );
-			expect( variables[0].name ).toBe( '@abc-icon' );
+			expect( variables[0].name ).toBe( 'abc-icon' );
 			expect( variables[0].length ).toBe( expectedCompressedLength );
 			expect( variables[0].value ).toBe( expectedCompressedValue );
 			done();
