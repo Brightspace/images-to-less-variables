@@ -1,6 +1,6 @@
 {
   "name": "images-to-variables",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple utility for generating Sass/Less variables for images.",
   "main": "lib/index.js",
   "bin": {
