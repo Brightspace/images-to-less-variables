@@ -1,6 +1,6 @@
 {
   "name": "images-to-variables",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "A simple utility for generating Sass/Less variables for images.",
   "main": "lib/index.js",
   "bin": {
@@ -29,8 +29,8 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "fs": "0.0.2",
-    "imagemin": "^3.1.0",
-    "object-assign": "^2.0.0",
+    "imagemin": "^3.2.0",
+    "object-assign": "^3.0.0",
     "q": "^1.2.0",
     "through2": "^0.6.3",
     "vinyl-fs": "^1.0.0",
