@@ -13,45 +13,85 @@ Install from NPM:
 npm install images-to-variables
 ```
 
-## Usage
+## Using from Node
 
-To generate Less variables containing 64-bit encoded images, the module's function can be called. A promise is returned and an array containing the variables is passed to handlers:
+To generate encoded image values from Node, call the `create` function.  A promise is returned and an array containing the encoded variables is passed to handlers:
 
 ```javascript
-var createImageVariables = require('images-to-variables');
+var imagesToVariables = require('images-to-variables');
 
-createImageVariables( '*.png' ).then( function( variables ) {
+imagesToVariables.create( '*.png' ).then( function( variables ) {
 	console.log( variables[0].name );
 	console.log( variables[0].length );
 	console.log( variables[0].value );
 } );
 ```
 
-Alternatively, the variables can be written directly to an optional output file:
+**A Note About Encoding:** currently, the `.png` contents are base-64 encoded so it can be safely included. For `.svg`, the contents are simply escaped as per [RFC 2397](http://tools.ietf.org/html/rfc2397).
+
+### Options
+
+#### Output File
+
+Specify the `dest` option to write the variables directly to a file :
 
 ```javascript
-var createImageVariables = require('images-to-variables');
-
-createImageVariables( '*.png', { dest: 'image-variables.less' } );
+imagesToVariables.create( '*.png', { dest: variables.less } );
 ```
 
-In addition, a prefix can be optionally prepended to each variable name. This is sometimes useful to avoid collisions with other variables.
+#### Prefix Variables
+
+Specify the `prefix` option to prefix the generated variables:
 
 ```javascript
-var createImageVariables = require('images-to-variables');
-
-createImageVariables( '*.png', { prefix: 'my-ns-' } );
+imagesToVariables.create( '*.png', { prefix: 'vui-' } );
 ```
 
-By default, images are compressed before base-64 encoding for the variables.  This can be explicitly set as well:
+#### Sass
+
+Specify the `scssFormatter` if you want scss variables:
 
 ```javascript
-var createImageVariables = require('images-to-variables');
+imagesToVariables.create(
+	'*.png', {
+		formatter: imagesToVariables.scssFormatter
+	}
+);
+```
 
-createImageVariables( '*.png', { optimize: false } );
+#### Less
+
+The default variable format is Less, however you can explicitly specify the `lessFormatter` if desired:
+
+```javascript
+imagesToVariables.create(
+	'*.png', {
+		formatter: imagesToVariables.lessFormatter
+	}
+);
+```
+
+#### Compression
+
+By default, images are minified using [imagemin](https://www.npmjs.com/package/imagemin) before encoding the variables. This can optionally be disabled by providing the `optimize` option:
+
+```javascript
+imagesToVariables.create( '*.png', { optimize: false } );
+```
+
+## Using from CLI
+
+Creating variables from the CLI is a piece of cake.  For example, the following commands will generate Less and Scss files containing variables formatted for Less or Scss respectively. A variable is generated for each file represented by the `*.png` pattern, and the variables will be prefixed with `vui-`.
+
+```javascript
+imgtoless -p vui- -o variables.less *.png
+
+imgtoscss -p vui- -o variables.scss *.png
 ```
 
 **Note:** Currently, the images must be uniquely named.  The module currently does not handle duplicate file names spread across directories, but this could be added.
+
+
 
 [npm-url]: https://www.npmjs.org/package/images-to-variables
 [npm-image]: https://img.shields.io/npm/v/images-to-variables.svg
