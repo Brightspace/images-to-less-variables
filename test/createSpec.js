@@ -37,7 +37,7 @@ describe('createVariables', function() {
 
 		var formatter = require('../lib/formatters/less');
 
-		spyOn(formatter, 'format').and.callThrough();
+		spyOn(formatter, 'formatVariable').and.callThrough();
 
 		imagesToVariables(imagesPath).then(function(variables) {
 			expect(variables.length).not.toBe(0);
