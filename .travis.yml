@@ -1,13 +1,13 @@
 language: node_js
 node_js:
-- '0.12'
+  - '0.12'
 after_success:
-- gulp coverage
+  - gulp coverage
 deploy:
-  provider: npm
-  email: d2ltravisdeploy@d2l.com
-  api_key:
-    secure: KlXxulHXjKi/dBk5mST82IXgrso3ONd1vMcQ5ax61aXhgML/iO4vuouRX66b1btWHkqK01lPPVrUgHLTe7IIfbNyzbMTxvhQ44sI9AACJPahjGq4q5Kn84X3W9+b3Zr/PZLR/xHdjDOkF4IuOrGAXQ25zCM6SxYiUHUv0ytJTGs=
+  provider: script
+  script: echo "npm credentials were revoked on 2018-07-12. We regenerated many
+    credentials, but this repository had no changes in at least 18 months and
+    was skipped. Reconfigure npm deployments. -omsmith"; exit 1
   on:
     tags: true
     repo: Brightspace/images-to-variables
