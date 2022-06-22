@@ -1,0 +1,10 @@
+{
+  "check-coverage": true,
+  "include": [
+    "lib/**/*.js"
+  ],
+  "reporter": [
+    "lcov",
+    "text"
+  ]
+}
