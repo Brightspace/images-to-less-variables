@@ -8,7 +8,9 @@
     "imgtoscss": "bin/scsscli"
   },
   "scripts": {
-    "test": "gulp"
+    "lint": "jshint lib/ test/",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "nyc jasmine test/**/*Spec.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,10 @@
     "sass",
     "images"
   ],
+  "files": [
+    "/bin",
+    "/lib"
+  ],
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "bugs": {
@@ -28,18 +34,16 @@
   "homepage": "https://github.com/Brightspace/images-to-variables",
   "dependencies": {
     "chalk": "^1.0.0",
-    "imagemin": "^3.2.0",
+    "imagemin": "^4.0.0",
     "object-assign": "^3.0.0",
     "q": "^1.2.0",
     "through2": "^0.6.3",
-    "vinyl-fs": "^1.0.0",
+    "vinyl-fs": "^3.0.3",
     "yargs": "^3.10.0"
   },
   "devDependencies": {
-    "gulp": "^3.8.9",
-    "gulp-coveralls": "^0.1.3",
-    "gulp-istanbul": "^0.3.1",
-    "gulp-jasmine": "^1.0.1",
-    "gulp-jshint": "^1.8.6"
+    "jasmine": "^4.2.1",
+    "jshint": "^2.13.4",
+    "nyc": "^15.1.0"
   }
 }
