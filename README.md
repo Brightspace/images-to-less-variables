@@ -1,8 +1,5 @@
 # images-to-variables
 [![NPM version][npm-image]][npm-url]
-[![Build status][ci-image]][ci-url]
-[![Coverage Status][coverage-image]][coverage-url]
-[![Dependency Status][dependencies-image]][dependencies-url]
 
 A simple utility for generating Sass/Less variables for images.
 
@@ -101,9 +98,3 @@ To learn how to create major releases and release from maintenance branches, ref
 
 [npm-url]: https://www.npmjs.org/package/images-to-variables
 [npm-image]: https://img.shields.io/npm/v/images-to-variables.svg
-[ci-url]: https://travis-ci.org/Brightspace/images-to-variables
-[ci-image]: https://travis-ci.org/Brightspace/images-to-variables.svg?branch=master
-[coverage-url]: https://coveralls.io/r/Brightspace/images-to-variables?branch=master
-[coverage-image]: https://img.shields.io/coveralls/Brightspace/images-to-variables.svg
-[dependencies-url]: https://david-dm.org/brightspace/images-to-variables
-[dependencies-image]: https://img.shields.io/david/Brightspace/images-to-variables.svg
