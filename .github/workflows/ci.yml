@@ -16,7 +16,3 @@ jobs:
         run: npm i
       - name: Test
         run: npm test
-      - name: Report coverage
-        uses: Brightspace/third-party-actions@coverallsapp/github-action
-        with:
-          github-token: ${{github.token}}
