@@ -1,5 +1,3 @@
-.nyc_output/
 node_modules/
-coverage/
 test/test.less
 package-lock.json
