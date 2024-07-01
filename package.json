@@ -38,8 +38,7 @@
     "object-assign": "^3.0.0",
     "q": "^1.2.0",
     "through2": "^0.6.3",
-    "vinyl-fs": "^3.0.3",
-    "yargs": "^3.10.0"
+    "vinyl-fs": "^3.0.3"
   },
   "devDependencies": {
     "jasmine": "^4.2.1",
